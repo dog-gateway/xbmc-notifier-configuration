@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dhc:dogHomeConfiguration xmlns:dhc="http://elite.polito.it/dogHomeConfiguration">
+    <dhc:buildingEnvironment>
+        <dhc:building id="Politecnico">
+            <dhc:flat id="DAUIN" class="Flat">
+                <dhc:room id="Office" class="StorageRoom">
+                    <dhc:ceiling id="ceiling" class="Ceiling"/>
+                    <dhc:floor id="floor" class="Floor"/>
+                    <dhc:wall id="wall" class="Wall"/>
+                </dhc:room>
+            </dhc:flat>
+        </dhc:building>
+    </dhc:buildingEnvironment>
+    <dhc:controllables>
+        <dhc:device class="EnOceanGateway" id="enocean-gateway" domoticSystem="EnOcean">
+            <dhc:description>The EnOcean USB gateway
+			</dhc:description>
+            <dhc:isIn>Office</dhc:isIn>
+            <dhc:controlFunctionality class="DeviceTeachInFunctionality">
+                <dhc:commands>
+                    <dhc:command class="ExplicitTeachInCommand" name="ExplicitTeachInCommand_enocean-gateway" id="ExplicitTeachInCommand_enocean-gateway">
+                        <dhc:param name="realCommandName" value="explicitTeachIn"/>
+                        <dhc:param name="nParams" value="2"/>
+                        <dhc:param name="commandParamName" value="deviceEEP"/>
+                        <dhc:param name="commandParamName" value="deviceHexAddress"/>
+                    </dhc:command>
+                    <dhc:command class="SmartTeachInCommand" name="SmartTeachInCommand_enocean-gateway" id="SmartTeachInCommand_enocean-gateway">
+                        <dhc:param name="realCommandName" value="smartTeachIn"/>
+                    </dhc:command>
+                    <dhc:command class="TeachInCommand" name="TeachInCommand_enocean-gateway" id="TeachInCommand_enocean-gateway">
+                        <dhc:param name="realCommandName" value="teachIn"/>
+                    </dhc:command>
+                </dhc:commands>
+            </dhc:controlFunctionality>
+            <dhc:notificationFunctionality class="TeachInNotificationFunctionality">
+                <dhc:notifications>
+                    <dhc:notification class="TeachInActiveNotification" id="TeachInActiveNotification_enocean-gateway">
+                        <dhc:param name="nParams" value="0"/>
+                        <dhc:param name="notificationName" value="activatedTeachIn"/>
+                    </dhc:notification>
+                    <dhc:notification class="TeachInEndedNotification" id="TeachInEndedNotification_enocean-gateway">
+                        <dhc:param name="nParams" value="0"/>
+                        <dhc:param name="notificationName" value="deactivatedTeachIn"/>
+                    </dhc:notification>
+                </dhc:notifications>
+            </dhc:notificationFunctionality>
+        </dhc:device>
+        <dhc:device class="RockerSwitch" id="RockerSwitch_2739642" domoticSystem="EnOcean" gateway="enocean-gateway">
+            <dhc:description>New Device of type RockerSwitch</dhc:description>
+            <dhc:isIn></dhc:isIn>
+            <dhc:param name="address" value="0x0029cdba" type="network"/>
+            <dhc:param name="eep" value="f6-02-01" type="network"/>
+            <dhc:param name="uid" value="2739642" type="network"/>
+            <dhc:notificationFunctionality class="ButtonMNotificationFunctionality">
+                <dhc:notifications>
+                    <dhc:notification class="PressedMNotification" id="PressedMNotification_button1_RockerSwitch_2739642">
+                        <dhc:param name="nParams" value="1"/>
+                        <dhc:param name="notificationName" value="pressed"/>
+                        <dhc:param name="notificationParamName" value="buttonID" type="String"/>
+                        <dhc:param name="buttonID" value="B1"/>
+                    </dhc:notification>
+                    <dhc:notification class="PressedMNotification" id="PressedMNotification_button2_RockerSwitch_2739642">
+                        <dhc:param name="nParams" value="1"/>
+                        <dhc:param name="notificationName" value="pressed"/>
+                        <dhc:param name="notificationParamName" value="buttonID" type="String"/>
+                        <dhc:param name="buttonID" value="B2"/>
+                    </dhc:notification>
+                    <dhc:notification class="PressedMNotification" id="PressedMNotification_button3_RockerSwitch_2739642">
+                        <dhc:param name="nParams" value="1"/>
+                        <dhc:param name="notificationName" value="pressed"/>
+                        <dhc:param name="notificationParamName" value="buttonID" type="String"/>
+                        <dhc:param name="buttonID" value="B3"/>
+                    </dhc:notification>
+                    <dhc:notification class="PressedMNotification" id="PressedMNotification_button4_RockerSwitch_2739642">
+                        <dhc:param name="nParams" value="1"/>
+                        <dhc:param name="notificationName" value="pressed"/>
+                        <dhc:param name="notificationParamName" value="buttonID" type="String"/>
+                        <dhc:param name="buttonID" value="B4"/>
+                    </dhc:notification>
+                    <dhc:notification class="ReleasedMNotification" id="ReleasedMNotification_button1_RockerSwitch_2739642">
+                        <dhc:param name="nParams" value="1"/>
+                        <dhc:param name="notificationName" value="released"/>
+                        <dhc:param name="notificationParamName" value="buttonID" type="String"/>
+                        <dhc:param name="buttonID" value="B1"/>
+                    </dhc:notification>
+                    <dhc:notification class="ReleasedMNotification" id="ReleasedMNotification_button2_RockerSwitch_2739642">
+                        <dhc:param name="nParams" value="1"/>
+                        <dhc:param name="notificationName" value="released"/>
+                        <dhc:param name="notificationParamName" value="buttonID" type="String"/>
+                        <dhc:param name="buttonID" value="B2"/>
+                    </dhc:notification>
+                    <dhc:notification class="ReleasedMNotification" id="ReleasedMNotification_button3_RockerSwitch_2739642">
+                        <dhc:param name="nParams" value="1"/>
+                        <dhc:param name="notificationName" value="released"/>
+                        <dhc:param name="notificationParamName" value="buttonID" type="String"/>
+                        <dhc:param name="buttonID" value="B3"/>
+                    </dhc:notification>
+                    <dhc:notification class="ReleasedMNotification" id="ReleasedMNotification_button4_RockerSwitch_2739642">
+                        <dhc:param name="nParams" value="1"/>
+                        <dhc:param name="notificationName" value="released"/>
+                        <dhc:param name="notificationParamName" value="buttonID" type="String"/>
+                        <dhc:param name="buttonID" value="B4"/>
+                    </dhc:notification>
+                </dhc:notifications>
+            </dhc:notificationFunctionality>
+            <dhc:state class="MultipleOnOffState">
+                <dhc:statevalues>
+                    <dhc:statevalue class="MultipleOffStateValue" name="off">
+                        <dhc:param name="buttonID" value="B1"/>
+                    </dhc:statevalue>
+                    <dhc:statevalue class="MultipleOnStateValue" name="on">
+                        <dhc:param name="buttonID" value="B1"/>
+                    </dhc:statevalue>
+                </dhc:statevalues>
+            </dhc:state>
+            <dhc:state class="MultipleOnOffState">
+                <dhc:statevalues>
+                    <dhc:statevalue class="MultipleOffStateValue" name="off">
+                        <dhc:param name="buttonID" value="B2"/>
+                    </dhc:statevalue>
+                    <dhc:statevalue class="MultipleOnStateValue" name="on">
+                        <dhc:param name="buttonID" value="B2"/>
+                    </dhc:statevalue>
+                </dhc:statevalues>
+            </dhc:state>
+            <dhc:state class="MultipleOnOffState">
+                <dhc:statevalues>
+                    <dhc:statevalue class="MultipleOffStateValue" name="off">
+                        <dhc:param name="buttonID" value="B3"/>
+                    </dhc:statevalue>
+                    <dhc:statevalue class="MultipleOnStateValue" name="on">
+                        <dhc:param name="buttonID" value="B3"/>
+                    </dhc:statevalue>
+                </dhc:statevalues>
+            </dhc:state>
+            <dhc:state class="MultipleOnOffState">
+                <dhc:statevalues>
+                    <dhc:statevalue class="MultipleOffStateValue" name="off">
+                        <dhc:param name="buttonID" value="B4"/>
+                    </dhc:statevalue>
+                    <dhc:statevalue class="MultipleOnStateValue" name="on">
+                        <dhc:param name="buttonID" value="B4"/>
+                    </dhc:statevalue>
+                </dhc:statevalues>
+            </dhc:state>
+        </dhc:device>
+        <dhc:device class="SingleTemperatureSensor" id="SingleTemperatureSensor_25851935" domoticSystem="EnOcean" gateway="enocean-gateway">
+            <dhc:description>New Device of type SingleTemperatureSensor</dhc:description>
+            <dhc:isIn></dhc:isIn>
+            <dhc:param name="address" value="0x018a781f" type="network"/>
+            <dhc:param name="eep" value="a5-02-05" type="network"/>
+            <dhc:param name="uid" value="25851935" type="network"/>
+            <dhc:controlFunctionality class="TemperatureMeasurementFunctionality">
+                <dhc:commands>
+                    <dhc:command class="GetTemperatureCommand" name="GetTemperatureCommand_SingleTemperatureSensor_25851935" id="GetTemperatureCommand_SingleTemperatureSensor_25851935">
+                        <dhc:param name="realCommandName" value="getTemperature"/>
+                        <dhc:param name="returnType" value="Measure"/>
+                    </dhc:command>
+                </dhc:commands>
+            </dhc:controlFunctionality>
+            <dhc:notificationFunctionality class="TemperatureMeasurementNotificationFunctionality">
+                <dhc:notifications>
+                    <dhc:notification class="TemperatureMeasurementNotification" id="TemperatureMeasurementNotification_SingleTemperatureSensor_25851935">
+                        <dhc:param name="nParams" value="2"/>
+                        <dhc:param name="notificationName" value="newTemperatureValue"/>
+                        <dhc:param name="unitOfMeasure" value="C"/>
+                        <dhc:param name="notificationParamName" value="temperatureValue" type="Measure"/>
+                    </dhc:notification>
+                </dhc:notifications>
+            </dhc:notificationFunctionality>
+            <dhc:state class="TemperatureState">
+                <dhc:statevalues>
+                    <dhc:statevalue class="TemperatureStateValue" name="">
+                        <dhc:param name="unitOfMeasure" value="C"/>
+                    </dhc:statevalue>
+                </dhc:statevalues>
+            </dhc:state>
+        </dhc:device>
+        <dhc:device class="DoorSensor" id="DoorSensor_25189033" domoticSystem="EnOcean" gateway="enocean-gateway">
+            <dhc:description>New Device of type DoorSensor</dhc:description>
+            <dhc:isIn></dhc:isIn>
+            <dhc:param name="address" value="0x01805aa9" type="network"/>
+            <dhc:param name="eep" value="d5-00-01" type="network"/>
+            <dhc:param name="uid" value="25189033" type="network"/>
+            <dhc:notificationFunctionality class="OpenCloseNotificationFunctionality">
+                <dhc:notifications>
+                    <dhc:notification class="CloseNotification" id="CloseNotification_DoorSensor_25189033">
+                        <dhc:param name="nParams" value="0"/>
+                        <dhc:param name="notificationName" value="close"/>
+                    </dhc:notification>
+                    <dhc:notification class="OpenNotification">
+                        <dhc:param name="nParams" value="0"/>
+                        <dhc:param name="notificationName" value="open"/>
+                    </dhc:notification>
+                </dhc:notifications>
+            </dhc:notificationFunctionality>
+            <dhc:state class="OpenCloseState">
+                <dhc:statevalues>
+                    <dhc:statevalue class="OpenStateValue" name="open"/>
+                    <dhc:statevalue class="CloseStateValue" name="close"/>
+                </dhc:statevalues>
+            </dhc:state>
+        </dhc:device>
+    </dhc:controllables>
+</dhc:dogHomeConfiguration>
